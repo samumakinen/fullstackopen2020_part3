@@ -7,9 +7,10 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
     "build:ui": "rm -rf build && cd ../fullstackopen2020/part2/puhelinluettelo && npm run build --prod && cp -r build ../../../fullstackopen2020_part3/",
     "deploy": "git push heroku",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push origin HEAD && npm run deploy",    
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push origin HEAD && npm run deploy",
     "logs:prod": "heroku logs --tail"
   },
   "repository": {
@@ -23,11 +24,15 @@
   },
   "homepage": "https://github.com/samumakinen/fullstackopen2020_part3#readme",
   "devDependencies": {
+    "eslint": "^7.17.0",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.11.11",
+    "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0"
   }
 }
